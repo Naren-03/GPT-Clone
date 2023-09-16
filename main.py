@@ -54,5 +54,4 @@ def generate_ai_response(user_input):
 
 if __name__ == '__main__':
     import uvicorn
-
     uvicorn.run(app)
