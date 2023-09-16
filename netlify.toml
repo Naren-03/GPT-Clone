@@ -1,5 +1,7 @@
 [build]
-  command = "uvicorn main:app"
+  base = "my_fastapi_project"
+  functions = "netlify-functions"
+  command = "python my_fastapi_project/main.py"
   publish = "."
 
 
