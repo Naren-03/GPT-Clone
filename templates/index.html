@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinn AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="chat-message user-message">
+                Hello, I am Quinn! How can I help you?
+            </div>
+        </div>
+        <div class="user-input">
+            <input type="text" id="user-input" placeholder="Type your question...">
+            <button id="send-button">Ask</button>
+            <!-- Add the voice button -->
+            <button id="voice-button" class="voice-button">
+                <i id="mic-icon" class="fas fa-microphone-slash"></i> Voice
+            </button>
+            
+            
+        </div>
+    </div>
+    <script src="{{ url_for('static', path='script.js') }}"></script>
+    <!-- Include the Web Speech API script -->
+    <script src="https://unpkg.com/annyang@2.6.1/dist/annyang.min.js"></script>
+</body>
+</html>
