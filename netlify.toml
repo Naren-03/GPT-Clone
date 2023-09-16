@@ -1,3 +1,7 @@
 [build]
   command = "uvicorn your_app:app"
   publish = "."
+
+
+[build.environment]
+    VARIABLE_NAME = "chatbotenv"

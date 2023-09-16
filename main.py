@@ -13,11 +13,11 @@ app.mount("/static", StaticFiles(directory="./static"), name="static")
 class UserInput(BaseModel):
     user_input: str
 
-@app.get("/")
-async def home(request: Request):
-    return {"message": "Hello Welcome to Home Page"}
+# @app.get("/")
+# async def home(request: Request):
+#     return {"message": "Hello Welcome to Home Page"}
 
-@app.get("/index/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
