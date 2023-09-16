@@ -4,6 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import google.generativeai as palm  # Import the palm library
+import os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -28,7 +29,8 @@ async def process_data(user_input: UserInput):
 
 def generate_ai_response(user_input):
     # Use the google.generativeai library to generate a response
-    palm.configure(api_key='AIzaSyCRYJfNjMnM4xEcsTc93kvqSPfmiEQuvxI')  # Replace 'YOUR_API_KEY' with your actual API key
+    palm_api_key = os.environ.get("MY_PALM_KEY")
+    palm.configure(api_key=palm_api_key)  # Replace 'YOUR_API_KEY' with your actual API key
     models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
     model = models[0].name
 

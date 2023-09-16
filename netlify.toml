@@ -1,0 +1,3 @@
+[build]
+  command = "uvicorn your_app:app"
+  publish = "."
